@@ -71,6 +71,7 @@ func main() {
 			// - add the client to the clients channel
 			// - start to asynchronously handle messages from this client
 			clients[id] = conn
+			fmt.Println("client connected", id)
 			go handleClient(conn, id, msgs)
 			id++
 		case msg := <-msgs:
